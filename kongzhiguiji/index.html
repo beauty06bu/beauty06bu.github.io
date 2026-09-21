@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="空之轨迹FC攻略 - 提供轨迹系列初代《空之轨迹FC》详细图文攻略、全支线任务指南、BOSS战技巧、魔导器获取路线及全角色养成建议。">
+    <meta name="keywords" content="空之轨迹FC攻略, 轨迹系列, FC攻略, 空之轨迹, RPG攻略, 轨迹百科">
+    <title>空之轨迹FC攻略 - 全支线任务与BOSS战指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f4f6f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8)), url('https://picsum.photos/seed/trafc/1200/400') center/cover;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-tags {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.2);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Main Layout */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-inner {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Content Sections */
+        section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Guide Cards */
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            background-color: #ddd;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .card-link {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .card-link::after {
+            content: '→';
+            margin-left: 4px;
+            transition: margin 0.2s;
+        }
+
+        .card-link:hover::after {
+            margin-left: 8px;
+        }
+
+        /* Strategy Table */
+        .strategy-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .strategy-table th, .strategy-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .strategy-table th {
+            background-color: #f8f9fa;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .strategy-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .strategy-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .status-essential {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-recommended {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 1.5rem;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .quick-list li {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 0.5rem;
+        }
+
+        .quick-list li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .quick-list a {
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .quick-list span {
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            padding-left: 1.2rem;
+            border-left: 3px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 3rem 0;
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        .footer-links {
+            margin: 1rem 0;
+        }
+
+        .footer-links a {
+            margin: 0 0.8rem;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">轨迹<span>攻略</span></div>
+        <nav>
+            <ul>
+                <li><a href="#guide">核心攻略</a></li>
+                <li><a href="#items">魔导器</a></li>
+                <li><a href="#boss">BOSS战</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="hero">
+    <div class="container">
+        <h1>空之轨迹FC 攻略指南</h1>
+        <p>埃雷波尼亚帝国的冒险之旅，从罗兹瓦尔邸到王都，本站为您提供详尽的流程指引、全支线任务及BOSS战解析。</p>
+        <div class="hero-tags">
+            <span class="tag">全支线任务</span>
+            <span class="tag">魔导器收集</span>
+            <span class="tag">BOSS战技巧</span>
+            <span class="tag">路线图解</span>
+        </div>
+    </div>
+</div>
+
+<main class="container">
+    <div class="main-grid">
+        <!-- Left Content -->
+        <div class="content-area">
+            
+            <!-- Core Guide -->
+            <section id="guide">
+                <h2 class="section-title">核心流程与关键节点</h2>
+                <div class="guide-grid">
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/rozens/400/200" alt="罗兹瓦尔邸" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">序章：罗兹瓦尔邸</h3>
+                            <p class="card-desc">初次来到帝国的教学关卡。重点在于熟悉战斗系统（AP条与S技），并在初期就规划好魔导器的获取顺序。</p>
+                            <a href="#" class="card-link">查看详细流程</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/forest/400/200" alt="森林探索" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">森林与道中战</h3>
+                            <p class="card-desc">穿越森林前往大圣堂的途中，会遇到强敌。建议在此阶段刷取“辉石”以强化装备，注意避开高等级敌人。</p>
+                            <a href="#" class="card-link">查看战斗技巧</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <img src="https://picsum.photos/seed/restaurant/400/200" alt="餐馆" class="card-img">
+                        <div class="card-body">
+                            <h3 class="card-title">王都日常与支线</h3>
+                            <p class="card-desc">在王都期间，除了推进主线，务必完成“黑之瞳”支线任务，这将直接影响后续剧情走向和关键道具获取。</p>
+                            <a href="#" class="card-link">查看支线任务</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Strategy Table -->
+            <section id="boss">
+                <h2 class="section-title">BOSS战策略指南</h2>
+                <div style="overflow-x: auto;">
+                    <table class="strategy-table">
+                        <thead>
+                            <tr>
+                                <th>BOSS名称</th>
+                                <th>战斗阶段</th>
+                                <th>应对策略</th>
+                                <th>推荐装备</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>幻之兽</td>
+                                <td>第一形态</td>
+                                <td>使用“气绝”技能打断其蓄力，优先攻击红色弱点。</td>
+                                <td><span class="status-badge status-essential">辉石护腕</span></td>
+                            </tr>
+                            <tr>
+                                <td>玛利亚贝尔</td>
+                                <td>最终决战</td>
+                                <td>注意她的范围魔法，保持角色分散站位。使用“超位魔法”进行爆发输出。</td>
+                                <td><span class="status-badge status-recommended">古龙之牙</span></td>
+                            </tr>
+                            <tr>
+                                <td>魔剑士凯文</td>
+                                <td>试炼场</td>
+                                <td>利用“闪避”技能规避其高伤害斩击，持续消耗其AP条。</td>
+                                <td><span class="status-badge status-essential">疾风之靴</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- FAQ -->
+            <section id="faq">
+                <h2 class="section-title">常见问题 (FAQ)</h2>
+                <div class="faq-item">
+                    <div class="faq-question">FC版与SC版有什么区别？</div>
+                    <div class="faq-answer">FC是《空之轨迹》的第一部，主要讲述主角团在罗兹瓦尔邸的冒险。SC（Second Chapter）在FC剧情基础上进行了大量扩充，修正了部分BUG，并加入了SC特有的战斗系统机制。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如果不做支线任务会影响结局吗？</div>
+                    <div class="faq-answer">不做部分关键支线（如“黑之瞳”）不会导致游戏无法通关，但会错过重要的剧情过场动画和关键道具（如某些魔导器），从而影响后续SC章节的体验。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何快速获得AP条？</div>
+                    <div class="faq-answer">在战斗中，当AP条填满后，通过攻击敌人或使用S技会自动释放“连击”。此外，装备带有“AP回复”属性的饰品（如“红宝石戒指”）可以有效提高AP回复速度。</div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Right Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-widget">
+                <h3>快速导航</h3>
+                <ul class="quick-list">
+                    <li><a href="#">第一章：罗兹瓦尔邸 <span>教学</span></a></li>
+                    <li><a href="#">第二章：森林深处 <span>探索</span></a></li>
+                    <li><a href="#">第三章：大圣堂 <span>剧情</span></a></li>
+                    <li><a href="#">第四章：王都 <span>日常</span></a></li>
+                    <li><a href="#">第五章：王都陷落 <span>战斗</span></a></li>
+                    <li><a href="#">终章：命运 <span>结局</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>魔导器图鉴</h3>
+                <ul class="quick-list">
+                    <li><a href="#">艾丝蒂尔：守护者 <span>入手</span></a></li>
+                    <li><a href="#">凯文：审判者 <span>入手</span></a></li>
+                    <li><a href="#">艾莉：守护者 <span>入手</span></a></li>
+                    <li><a href="#">朱迪思：裁决者 <span>入手</span></a></li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>版本提示</h3>
+                <p style="font-size: 0.9rem; color: #666;">
+                    本攻略适用于<br>
+                    Steam版 / PSP版 / Switch版<br>
+                    1.05及以上的最新版本<br>
+                </p>
+            </div>
+        </aside>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于本站</a>
+            <a href="#">投稿指南</a>
+            <a href="#">联系站长</a>
+            <a href="#">免责声明</a>
+        </div>
+        <p>&copy; 2023 轨迹攻略网 - 专注于空之轨迹系列游戏资料整理。</p>
+        <p style="font-size: 0.8rem; margin-top: 0.5rem; color: #7f8c8d;">游戏版权属于Falcom Corporation</p>
+    </div>
+</footer>
+
+</body>
+</html>
