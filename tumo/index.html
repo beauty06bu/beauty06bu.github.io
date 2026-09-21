@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="屠魔 - 深度解析屠魔传说、神话生物图鉴、恶魔学知识以及相关奇幻文学与影视作品的深度指南。">
+    <meta name="keywords" content="屠魔, 恶魔图鉴, 奇幻文学, 恶魔学, 西方神话, 怪物图鉴">
+    <title>屠魔-奇幻生物图鉴与神话传说深度指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #0a0a0c;
+            --card-bg: #141418;
+            --text-main: #e0e0e0;
+            --text-muted: #888899;
+            --accent-red: #d32f2f;
+            --accent-gold: #c5a059;
+            --accent-blue: #2979ff;
+            --border-color: #2a2a35;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--accent-red);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 1rem;
+            color: var(--text-muted);
+            font-weight: normal;
+            margin-left: 1rem;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(10, 10, 12, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-main);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            margin-bottom: 3rem;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('https://picsum.photos/seed/demon/1920/1080') no-repeat center center/cover;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn Up 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-red);
+            color: white;
+            border: 1px solid var(--accent-red);
+        }
+
+        .btn-primary:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main);
+            border: 1px solid var(--text-muted);
+            margin-left: 1rem;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--text-main);
+            background-color: rgba(255,255,255,0.05);
+        }
+
+        /* Intro Section */
+        .intro {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .intro-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .intro-tags {
+            display: flex;
+            gap: 0.8rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background-color: rgba(197, 160, 89, 0.15);
+            color: var(--accent-gold);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        .intro-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Categories Grid */
+        .categories {
+            padding: 3rem 0;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cat-card {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .cat-card:hover {
+            border-color: var(--accent-red);
+            transform: translateY(-5px);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-gold);
+        }
+
+        .cat-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cat-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Featured Creatures */
+        .featured {
+            padding: 3rem 0;
+            background-color: #0f0f12;
+        }
+
+        .creature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .creature-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .creature-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            transition: filter 0.3s;
+        }
+
+        .creature-card:hover .creature-img {
+            filter: grayscale(0%);
+        }
+
+        .creature-body {
+            padding: 1.5rem;
+        }
+
+        .creature-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .creature-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .creature-rank {
+            background-color: rgba(211, 47, 47, 0.2);
+            color: var(--accent-red);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .creature-desc {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .creature-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 1rem;
+        }
+
+        /* Knowledge Base / FAQ */
+        .knowledge {
+            padding: 3rem 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-blue);
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #050506;
+            border-top: 1px solid var(--border-color);
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h2 {
+            color: var(--accent-red);
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            color: var(--text-main);
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-gold);
+        }
+
+        .copyright {
+            text-align: center;
+            color: #555;
+            font-size: 0.85rem;
+            padding-top: 2rem;
+            border-top: 1px solid #1a1a20;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .nav-wrapper { flex-direction: column; gap: 1rem; }
+            nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            .mobile-menu-btn { display: block; }
+            .intro-grid { grid-template-columns: 1fr; }
+            .faq-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .section-title { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">屠魔<span>百科</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">恶魔图鉴</a></li>
+                    <li><a href="#">神话传说</a></li>
+                    <li><a href="#">相关作品</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <h1>直面深渊<br>探寻屠魔之道</h1>
+                <p>系统整理西方神话中的恶魔学、异种生物与宗教传说，为您提供最详尽的怪物图鉴与战斗指南。</p>
+                <div>
+                    <a href="#creatures" class="btn btn-primary">浏览图鉴</a>
+                    <a href="#knowledge" class="btn btn-outline">了解传说</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="container intro">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2 class="section-title" style="border-color: var(--accent-gold); margin-bottom: 1rem;">关于屠魔</h2>
+                    <p>“屠魔”一词在西方文化与奇幻文学中，通常指代针对超自然邪恶力量的净化、驱除或毁灭行为。它不仅存在于圣经传说中，也是现代奇幻文学、电子游戏及影视作品的核心主题。</p>
+                    <p>本站致力于构建一个开放的资料库，收录了从《失落的秘钥》到《战神》系列中出现的经典怪物，以及真实的宗教恶魔学历史资料。</p>
+                    <div class="intro-tags">
+                        <span class="tag">恶魔学</span>
+                        <span class="tag">奇幻生物</span>
+                        <span class="tag">宗教传说</span>
+                        <span class="tag">游戏机制</span>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="https://picsum.photos/seed/darkness/600/400" alt="深渊凝视">
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="container categories">
+            <h2 class="section-title">研究领域 <span>分类导航</span></h2>
+            <div class="category-grid">
+                <article class="cat-card">
+                    <div class="cat-icon">⚔️</div>
+                    <h3>恶魔分类</h3>
+                    <p>基于七宗罪、地狱等级或形态的详细生物分类体系。</p>
+                </article>
+                <article class="cat-card">
+                    <div class="cat-icon">📜</div>
+                    <h3>历史文献</h3>
+                    <p>收录《所罗门之钥》、马利恩·威廉姆斯著作等经典文本。</p>
+                </article>
+                <article class="cat-card">
+                    <div class="cat-icon">📖</div>
+                    <h3>文学影视</h3>
+                    <p>盘点《黑暗之魂》、《恶魔城》及各类奇幻小说中的怪物。</p>
+                </article>
+                <article class="cat-card">
+                    <div class="cat-icon">🔮</div>
+                    <h3>神秘仪式</h3>
+                    <p>探讨炼金术、召唤术及古代驱魔仪式的科学视角。</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Featured Creatures -->
+        <section class="featured" id="creatures">
+            <div class="container">
+                <h2 class="section-title">经典生物图鉴 <span>Ranking Top 5</span></h2>
+                <div class="creature-grid">
+                    <!-- Creature 1 -->
+                    <article class="creature-card">
+                        <img src="https://picsum.photos/seed/demon1/400/300" alt="地狱三头犬" class="creature-img">
+                        <div class="creature-body">
+                            <div class="creature-header">
+                                <h3 class="creature-name">地狱三头犬</h3>
+                                <span class="creature-rank">S级</span>
+                            </div>
+                            <p class="creature-desc">希腊神话中的地下看门兽，守护冥界入口。拥有三个头颅，能嗅出灵魂的气息。</p>
+                            <div class="creature-meta">
+                                <span>来源: 希腊神话</span>
+                                <span>弱点: 喷火</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Creature 2 -->
+                    <article class="creature-card">
+                        <img src="https://picsum.photos/seed/demon2/400/300" alt="路西法" class="creature-img">
+                        <div class="creature-body">
+                            <div class="creature-header">
+                                <h3 class="creature-name">路西法</h3>
+                                <span class="creature-rank">SS级</span>
+                            </div>
+                            <p class="creature-desc">堕落天使之王，原为晨星。通常被描绘为手持火焰之剑的君主形象。</p>
+                            <div class="creature-meta">
+                                <span>来源: 启示录</span>
+                                <span>弱点: 神圣光辉</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Creature 3 -->
+                    <article class="creature-card">
+                        <img src="https://picsum.photos/seed/demon3/400/300" alt="梦魇" class="creature-img">
+                        <div class="creature-body">
+                            <div class="creature-header">
+                                <h3 class="creature-name">梦魇</h3>
+                                <span class="creature-rank">A级</span>
+                            </div>
+                            <p class="creature-desc">能够进入人类梦境，通过制造噩梦吸食恐惧或控制意识的恶魔。</p>
+                            <div class="creature-meta">
+                                <span>来源: 北欧神话</span>
+                                <span>弱点: 神圣圣水</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Creature 4 -->
+                    <article class="creature-card">
+                        <img src="https://picsum.photos/seed/demon4/400/300" alt="魅魔" class="creature-img">
+                        <div class="creature-body">
+                            <div class="creature-header">
+                                <h3 class="creature-name">魅魔</h3>
+                                <span class="creature-rank">A级</span>
+                            </div>
+                            <p class="creature-desc">拥有女性美貌的恶魔，通常在夜间诱骗男性入睡，通过性接触吸取生命力。</p>
+                            <div class="creature-meta">
+                                <span>来源: 拉丁传说</span>
+                                <span>弱点: 银制武器</span>
+                            </div>
+                        </div>
+                    </article>
+
+                     <!-- Creature 5 -->
+                     <article class="creature-card">
+                        <img src="https://picsum.photos/seed/demon5/400/300" alt="食尸鬼" class="creature-img">
+                        <div class="creature-body">
+                            <div class="creature-header">
+                                <h3 class="creature-name">食尸鬼</h3>
+                                <span class="creature-rank">B级</span>
+                            </div>
+                            <p class="creature-desc">以腐肉为食的亡灵生物，通常在战场或墓地出没，具有极强的再生能力。</p>
+                            <div class="creature-meta">
+                                <span>来源: 中东传说</span>
+                                <span>弱点: 火焰净化</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Creature 6 -->
+                    <article class="creature-card">
+                        <img src="https://picsum.photos/seed/demon6/400/300" alt="巴风特" class="creature-img">
+                        <div class="creature-body">
+                            <div class="creature-header">
+                                <h3 class="creature-name">巴风特</h3>
+                                <span class="creature-rank">A+级</span>
+                            </div>
+                            <p class="creature-desc">所罗门王72柱魔神之一，羊头人身的恶魔，象征着欲望与享乐。</p>
+                            <div class="creature-meta">
+                                <span>来源: 《所罗门之钥》</span>
+                                <span>弱点: 灵性封印</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Base -->
+        <section class="container knowledge" id="knowledge">
+            <h2 class="section-title">知识库 <span>常见问题</span></h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>“屠魔”在现代文化中意味着什么？</h4>
+                    <p>在现代流行文化中，“屠魔”不再局限于宗教意义上的驱魔，更多时候指代主角在奇幻世界中与邪恶势力战斗、守护世界的英雄行为。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>恶魔学与超自然研究有什么区别？</h4>
+                    <p>恶魔学通常关注恶魔的分类、历史和神话起源，而超自然研究则更广泛地探讨无法用科学解释的现象，两者在学术上有所交集但侧重点不同。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>如何科学地看待“恶魔”的概念？</h4>
+                    <p>从心理学和社会学角度来看，“恶魔”往往是人类恐惧、欲望或社会阴暗面的投射。许多传说中的恶魔形象都反映了当时人们所担忧的社会问题。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>在游戏中屠魔有哪些策略？</h4>
+                    <p>在奇幻游戏中，屠魔通常需要利用元素克制（如圣水对恶魔）、物理破防或寻找弱点部位。了解怪物的背景设定往往能提供关键的战斗线索。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>屠魔百科</h2>
+                    <p>致力于收录最详尽的奇幻生物资料，连接神话、历史与现代流行文化。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>探索</h4>
+                    <ul>
+                        <li><a href="#">最新图鉴</a></li>
+                        <li><a href="#">热门传说</a></li>
+                        <li><a href="#">游戏攻略</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资料</h4>
+                    <ul>
+                        <li><a href="#">所罗门之钥</a></li>
+                        <li><a href="#">炼金术士</a></li>
+                        <li><a href="#">圣经注释</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系</h4>
+                    <ul>
+                        <li><a href="#">提交生物</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">免责声明</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 屠魔百科 - 奇幻生物图鉴与神话传说指南. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的交互逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            // 移动端菜单切换
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            
+            menuBtn.addEventListener('click', () => {
+                if (nav.style.display === 'flex') {
+                    nav.style.display = 'none';
+                } else {
+                    nav.style.display = 'flex';
+                    nav.style.flexDirection = 'column';
+                    nav.style.position = 'absolute';
+                    nav.style.top = '100%';
+                    nav.style.left = '0';
+                    nav.style.width = '100%';
+                    nav.style.background = '#0a0a0c';
+                    nav.style.padding = '1rem';
+                    nav.style.borderBottom = '1px solid #2a2a35';
+                }
+            });
+
+            // 简单的平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                        // 移动端点击后自动收起菜单
+                        if (window.innerWidth <= 768) {
+                            nav.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
